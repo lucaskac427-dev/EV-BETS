@@ -36,6 +36,10 @@ _data/
 # Caches
 .cache/
 
+# Dashboard public/ — image storage. Player headshots load from external CDNs
+# (cdn.nba.com) at runtime; nothing here belongs in git.
+dashboard/public/
+
 # IDE
 .vscode/
 .idea/
