@@ -1,0 +1,20 @@
+backtest,sport,market(s),sample,win_rate,ROI,verdict,module
+NBA player props — DFS consensus EDGE,NBA,6 core prop markets,2245,~48% (plus-money dogs),+9.79%,PROVEN — the moneymaker,historical/backtest.py
+NBA game lines — projection,NBA,h2h / totals / spreads,large,—,-5%,efficient market — do NOT bet,projections/projection_backtest.py
+Soccer 1X2 — edge test,Soccer big-5,moneyline,16219,26% (longshot-heavy),-6.66%,efficient — ROI worsens as 'edge' grows,projections/soccer_gameline_backtest.py
+Soccer projection — ACCURACY,Soccer big-5,full bet menu (DC/TT/AH/totals),14175 picks,83.9% (model said 85.9%),n/a — calibration,ACCURATE predictor (Brier 0.199),projections/soccer_projection_accuracy.py
+Soccer model — ROI at real prices,Soccer big-5,ML / O-U 2.5 / Asian handicap,11601,56.6%,-4.01%,"accurate, but vig > edge",projections/soccer_model_roi.py
+Forward tracker — LIVE (Game 7 SAS@OKC),NBA,player props,103,58.3%,tracked only (no bet),"real-world result, 2026-05-30",tracking/recorder.py
+Per-book ROI — pointsbetus,NBA,props (consensus edge),24,62.5%,+36.5%,SOFT — beatable,historical/book_roi.py
+Per-book ROI — betrivers,NBA,props (consensus edge),393,49.4%,+14.2%,SOFT — beatable,historical/book_roi.py
+Per-book ROI — betmgm,NBA,props (consensus edge),148,52.0%,+13.7%,SOFT — beatable,historical/book_roi.py
+Per-book ROI — bovada,NBA,props (consensus edge),1197,46.5%,+10.2%,SOFT — beatable,historical/book_roi.py
+Per-book ROI — fanduel,NBA,props (consensus edge),179,50.8%,+8.3%,SOFT — beatable,historical/book_roi.py
+Per-book ROI — draftkings,NBA,props (consensus edge),95,48.4%,+6.5%,SOFT — beatable,historical/book_roi.py
+Per-book ROI — mybookieag,NBA,props (consensus edge),98,54.1%,+5.4%,SOFT — beatable,historical/book_roi.py
+Per-book ROI — williamhill_us,NBA,props (consensus edge),37,46.0%,+5.1%,SOFT — beatable,historical/book_roi.py
+Per-book ROI — unibet_us,NBA,props (consensus edge),170,43.5%,+4.3%,SOFT — beatable,historical/book_roi.py
+Per-book ROI — betonlineag,NBA,props (consensus edge),62,46.8%,+3.6%,SOFT — beatable,historical/book_roi.py
+Per-book ROI — barstool,NBA,props (consensus edge),10,30.0%,-36.5%,SHARP — trust it,historical/book_roi.py
+Per-book ROI — fanatics,NBA,props (consensus edge),3,0.0%,-100.0%,SHARP — trust it,historical/book_roi.py
+Per-book ROI — wynnbet,NBA,props (consensus edge),1,0.0%,-100.0%,SHARP — trust it,historical/book_roi.py

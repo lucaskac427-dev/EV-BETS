@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node
+node_modules/
+.next/
+out/
+dist/
+
+# Env — publish only the template, never real values
+.env
+.env.*
+!.env.example
+
+# Secrets / keys
+*.pem
+*.key
+*.p12
+*.pfx
+kalshi_private_key.*
+
+# Data lake — large raw datasets (Kaggle dumps, fbref master.db 210MB+, scraped CSVs).
+# Reproducible / re-downloadable; never belongs in git.
+_data/
+*.db
+*.sqlite
+*.sqlite3
+
+# Caches
+.cache/
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

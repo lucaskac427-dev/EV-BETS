@@ -1,0 +1,15 @@
+table,rows,first,last,what_it_is,source
+player_game_logs,584591,2004-10-22,2026-05-30,"NBA box scores — per player, per game (pts/reb/ast/3pm/blk/stl/min)",nba_api
+pbp_events,179963,,,NBA play-by-play — every event with shot coordinates,nba_api playbyplayv3
+soccer_player_match_stats,1209892,1958-06-24,2026-05-24,"Soccer player per-match stats (shots, assists…) — the prop-projection base",FBref/Understat (soccerdata)
+soccer_match_odds,303935,1993-07-23,2026-05-26,"Soccer match RESULTS (full-time goals) — 300K matches, 1993→now",football-data.co.uk
+injuries,157501,1973-09-02,2025-12-22,"Injury history — soccer (Transfermarkt, deep) + NBA (prosportstransactions)",Transfermarkt / prosportstransactions
+sofascore_events,1605,2025-12-07,2025-12-11,SofaScore multi-sport schedule + final scores (all sports),SofaScore API
+sofascore_event_details,5,2026-05-31,2026-05-31,SofaScore per-event play-by-play + statistics + lineups + momentum,SofaScore API
+team_features,54788,2004-10-22,2026-05-28,"NBA team feature store (rolling form, pace, defense) — projection inputs",derived
+player_features,3988,2026-04-01,2026-05-28,"NBA player feature store (rolling avgs, rest, usage) — projection inputs",derived
+team_defense_ratings,30,2026-05-31,2026-05-31,NBA team defensive ratings by stat,derived
+league_averages,20,2026-05-30,2026-05-31,NBA league scoring baselines by season,derived
+live_game_state,0,,,Live capture: NBA in-game state time-series (fills during a live game),nba_api live
+live_player_state,0,,,Live capture: NBA in-game player stats time-series,nba_api live
+live_pbp_events,0,,,Live capture: NBA live play-by-play stream,nba_api live

@@ -1,0 +1,42 @@
+sport_or_platform,market,rows,first,last
+basketball_nba,player_points_alternate,3272308,2023-12-07,2026-05-31
+basketball_nba,player_rebounds_alternate,2370000,2023-12-07,2026-05-31
+basketball_nba,player_points_rebounds_assists_alternate,1628622,2023-12-07,2026-05-31
+basketball_nba,player_points,1558174,2023-05-04,2026-05-29
+basketball_nba,player_threes_alternate,1467818,2023-12-07,2026-05-31
+basketball_nba,player_assists_alternate,1465877,2023-12-07,2026-05-31
+basketball_nba,player_points_rebounds_assists,1403366,2023-05-04,2026-05-31
+basketball_nba,player_points_rebounds_alternate,1319577,2023-12-07,2026-05-31
+basketball_nba,player_points_assists_alternate,988508,2023-12-07,2026-05-31
+basketball_nba,player_rebounds,964086,2023-05-04,2026-05-29
+basketball_nba,player_points_rebounds,799621,2023-11-13,2026-05-31
+basketball_nba,player_threes,765511,2023-05-04,2026-05-29
+basketball_nba,player_rebounds_assists_alternate,695385,2023-12-07,2026-05-31
+basketball_nba,player_assists,680559,2023-05-04,2026-05-29
+basketball_nba,player_points_assists,659768,2023-11-13,2026-05-31
+basketball_nba,player_rebounds_assists,617089,2023-11-13,2026-05-31
+basketball_nba,player_steals_alternate,415673,2023-12-21,2026-05-31
+basketball_nba,player_double_double,385956,2023-11-13,2026-05-31
+basketball_nba,player_blocks,370132,2023-05-04,2026-05-29
+basketball_nba,player_first_basket,357833,2023-11-16,2026-05-31
+basketball_nba,player_steals,320106,2023-05-04,2026-05-29
+basketball_nba,player_blocks_alternate,315244,2023-12-21,2026-05-31
+basketball_nba,player_blocks_steals,251416,2023-11-13,2026-05-31
+basketball_nba,h2h,234328,2020-09-01,2026-05-31
+basketball_nba,spreads,224414,2020-09-01,2026-05-31
+basketball_nba,totals,220986,2020-09-01,2026-05-31
+basketball_nba,player_method_of_first_basket,193358,2024-11-30,2026-05-31
+basketball_nba,player_field_goals,74848,2024-12-06,2026-05-10
+basketball_nba,player_triple_double,68683,2023-11-13,2026-05-31
+basketball_nba,h2h_lay,7008,2020-09-01,2023-01-16
+soccer_epl,player_shots,478119,2024-08-16,2026-05-24
+soccer_epl,player_shots_on_target,458849,2024-08-16,2026-05-24
+soccer_epl,player_assists,221274,2024-08-16,2026-05-24
+soccer_epl,h2h,19338,2020-09-12,2020-10-26
+soccer_epl,totals,7850,2020-09-12,2020-10-26
+soccer_epl,spreads,5572,2020-09-12,2020-10-26
+soccer_epl,h2h_lay,1710,2020-09-12,2020-10-24
+dfs:prizepicks,player props,2099,live,live
+dfs:dk_pick6,player props,245,live,live
+dfs:sleeper,player props,214,live,live
+dfs:underdog,player props,123,live,live

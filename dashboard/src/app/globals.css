@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+:root {
+  /* ---- Surfaces: deep-space navy, layered for real depth ---- */
+  --bg: #060912;
+  --bg-2: #0a0f1e;
+  --bg-elevated: #0f1730;
+  --bg-row: #0b1222;
+  --bg-hover: #131d3a;
+
+  --border: #19223c;
+  --border-bright: #2a3a64;
+  --hairline: rgba(255, 255, 255, 0.05);
+
+  --text: #f3f6ff;
+  --text-dim: #97a3c8;
+  --text-muted: #586288;
+
+  /* ---- Mint = the money color ---- */
+  --accent: #00e6a0;
+  --accent-2: #34f5c4;
+  --accent-dim: #00a777;
+  --accent-glow: rgba(0, 230, 160, 0.32);
+  --accent-soft: rgba(0, 230, 160, 0.09);
+
+  /* ---- Modern-tech gradient for hero strokes / brand ---- */
+  --grad-tech: linear-gradient(110deg, #00e6a0 0%, #2ad4ff 60%, #5b9dff 100%);
+
+  --info: #5b9dff;
+  --info-dim: #3b7ad8;
+  --info-soft: rgba(91, 157, 255, 0.1);
+
+  --highlight: #d660ff;
+  --highlight-dim: #a93dd0;
+  --highlight-soft: rgba(214, 96, 255, 0.12);
+
+  --negative: #ff5b75;
+  --negative-dim: #cc3d54;
+  --negative-soft: rgba(255, 91, 117, 0.09);
+  --warn: #ffb84d;
+  --warn-dim: #cc8c20;
+
+  --shadow-card: 0 1px 0 0 var(--hairline) inset, 0 10px 30px -18px rgba(0, 0, 0, 0.9);
+  --shadow-lift: 0 1px 0 0 var(--hairline) inset, 0 18px 40px -20px rgba(0, 0, 0, 0.95);
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.011em;
+}
+
+/* ---- Ambient: a slow living aurora + faint dot-grid + top vignette ---- */
+body {
+  position: relative;
+  background:
+    radial-gradient(60% 50% at 12% -5%, rgba(0, 230, 160, 0.10) 0%, transparent 60%),
+    radial-gradient(55% 45% at 92% 8%, rgba(91, 157, 255, 0.09) 0%, transparent 60%),
+    radial-gradient(50% 50% at 80% 105%, rgba(214, 96, 255, 0.07) 0%, transparent 60%),
+    var(--bg);
+  background-attachment: fixed;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20% -10% auto -10%;
+  height: 70vh;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(40% 60% at 20% 0%, rgba(0, 230, 160, 0.10), transparent 70%),
+    radial-gradient(45% 60% at 75% 10%, rgba(91, 157, 255, 0.10), transparent 70%);
+  filter: blur(36px);
+  opacity: 0.7;
+  animation: aurora 22s ease-in-out infinite alternate;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(rgba(120, 150, 220, 0.10) 1px, transparent 1.4px);
+  background-size: 26px 26px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), transparent 80%);
+  opacity: 0.5;
+}
+
+@keyframes aurora {
+  0%   { transform: translate3d(-2%, 0, 0) scale(1);    opacity: 0.55; }
+  100% { transform: translate3d(3%, 2%, 0) scale(1.08); opacity: 0.85; }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 var(--accent-glow); }
+  50%      { opacity: 0.6; box-shadow: 0 0 0 4px transparent; }
+}
+@keyframes ticker-flash {
+  0% { background-color: var(--accent-glow); }
+  100% { background-color: transparent; }
+}
+@keyframes bar-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.dot-pulse { animation: pulse-glow 1.5s ease-in-out infinite; }
+.row-flash { animation: ticker-flash 0.8s ease-out; }
+
+/* ---- Surfaces ---- */
+.surface {
+  background: linear-gradient(180deg, var(--bg-2), var(--bg));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+}
+.glass {
+  background: color-mix(in srgb, var(--bg-2) 72%, transparent);
+  backdrop-filter: blur(14px) saturate(1.3);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3);
+  border-bottom: 1px solid var(--hairline);
+}
+.brand-grad {
+  background: linear-gradient(110deg, #fff 0%, var(--accent-2) 55%, var(--info) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---- Rows: hairline separation, smooth hover lift, +EV accent rail ---- */
+.terminal-row {
+  position: relative;
+  background: transparent;
+  border-bottom: 1px solid var(--hairline) !important;
+  transition: background 0.16s ease, transform 0.16s ease, box-shadow 0.16s ease;
+}
+.terminal-row:hover {
+  background: var(--bg-hover);
+  box-shadow: var(--shadow-lift);
+  z-index: 2;
+}
+.terminal-row.positive {
+  background: linear-gradient(90deg, rgba(0, 230, 160, 0.06) 0%, transparent 28%);
+}
+.terminal-row.positive::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 12%; bottom: 12%;
+  width: 2.5px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--accent-2), var(--accent-dim));
+  box-shadow: 0 0 14px var(--accent-glow);
+}
+.terminal-row.positive:hover {
+  background: linear-gradient(90deg, rgba(0, 230, 160, 0.11) 0%, var(--bg-hover) 45%);
+}
+
+/* ---- Edge bar (data-viz fill that shows magnitude) ---- */
+.edge-bar {
+  position: relative;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--bg-elevated);
+  overflow: hidden;
+}
+.edge-bar > span {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 999px;
+  transform-origin: left;
+  animation: bar-grow 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* ---- Chips / pills ---- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--border-bright);
+  border-radius: 999px;
+  background: var(--bg-row);
+  color: var(--text-dim);
+}
+.chip.accent { border-color: var(--accent-dim); color: var(--accent); background: var(--accent-soft); box-shadow: 0 0 16px -4px var(--accent-glow); }
+.chip.info { border-color: var(--info-dim); color: var(--info); background: var(--info-soft); }
+.chip.highlight { border-color: var(--highlight-dim); color: var(--highlight); background: var(--highlight-soft); }
+.chip.warn { border-color: var(--warn-dim); color: var(--warn); }
+.chip.negative { border-color: var(--negative-dim); color: var(--negative); background: var(--negative-soft); }
+
+/* ---- Pill tabs (nav / toggles) ---- */
+.pill {
+  position: relative;
+  border-radius: 999px;
+  transition: color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+.pill[data-active="true"] {
+  background: var(--bg-elevated);
+  box-shadow: 0 0 0 1px var(--border-bright) inset, 0 0 22px -10px var(--accent-glow);
+}
+
+/* ---- Buttons ---- */
+.btn-scan {
+  border-radius: 10px;
+  background: linear-gradient(180deg, var(--accent-2), var(--accent-dim));
+  color: #042018;
+  font-weight: 700;
+  box-shadow: 0 0 0 1px rgba(0, 230, 160, 0.4), 0 10px 28px -12px var(--accent-glow);
+  transition: transform 0.14s ease, box-shadow 0.14s ease, filter 0.14s ease;
+}
+.btn-scan:hover { transform: translateY(-1px); filter: brightness(1.06); box-shadow: 0 0 0 1px rgba(0, 230, 160, 0.6), 0 14px 34px -10px var(--accent-glow); }
+.btn-scan:active { transform: translateY(0); }
+
+/* ---- Numerics ---- */
+.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; letter-spacing: -0.02em; }
+.hero-num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; letter-spacing: -0.03em; font-weight: 600; }
+
+/* ---- Thin modern scrollbars ---- */
+* { scrollbar-width: thin; scrollbar-color: var(--border-bright) transparent; }
+*::-webkit-scrollbar { height: 8px; width: 8px; }
+*::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 999px; }
+*::-webkit-scrollbar-track { background: transparent; }

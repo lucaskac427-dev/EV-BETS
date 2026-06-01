@@ -1,0 +1,8 @@
+table,rows,first,last,what_it_is,source
+historical_odds_snapshots,25288966,2020-09-01,2026-05-31,Sportsbook odds history — NBA (30 markets) + EPL (7); the devig source for the consensus edge,The Odds API
+soccer_match_odds,303935,1993-07-23,2026-05-26,Soccer 1X2 + O/U 2.5 + Asian-handicap closing odds (consensus + Pinnacle),football-data.co.uk
+dfs_lines,2681,2026-05-30,2026-05-31,Live DFS lines — PrizePicks / Underdog / Sleeper / DK Pick6 / Hard Rock,DFS platform APIs
+dfs_opportunities,238,2026-05-30,2026-05-31,Latest scan output — DFS edges (soft line vs sharp consensus),derived (scan)
+tracked_picks,112,2026-05-30,2026-05-31,"Forward tracker — every edge the software surfaces, graded vs reality",derived (recorder)
+book_roi,13,2026-05-31,2026-05-31,Per-book ROI — which books are soft (beatable) vs sharp,derived (backtest)
+markets,0,,,Kalshi markets synced,Kalshi API
